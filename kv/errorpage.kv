@@ -1,0 +1,13 @@
+
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<ErrorPage>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'CoronaVirus Live'
+            right_action_items: [['arrow-collapse-left', lambda x: app.navBar('open')]]
+            md_bg_color: get_color_from_hex('#10B5A2')
+        MDLabel:
+            text: 'PLEASE CONNECT TO THE INTERNET AND REOPEN THE APP'
+            halign: 'center'

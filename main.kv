@@ -1,0 +1,40 @@
+
+#:include kv\homepage.kv
+#:include kv\errorpage.kv
+
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+NavigationLayout:
+    ScreenManager:
+        id: sm
+        HomePage:
+            id: Home_Page
+            name: 'Home_Page'
+        ErrorPage:
+            id: Error_Page
+            name: 'Error_Page'
+    MDNavigationDrawer:
+        id: nav
+        anchor: 'right'
+
+        BoxLayout:
+            orientation: 'vertical'
+            MDIconButton:
+                icon: 'arrow-collapse-right'
+                on_release: app.navBar('close')
+            MDLabel:
+                text: 'If you like this app then please give feedback on Instagram "IamPramo"'
+                halign: 'center'
+                font_size: 40
+                theme_text_color: "Custom"
+                text_color: 0, 0, 1, 1
+            MDRoundFlatIconButton:
+                icon: "instagram"
+                text: "Instagram"
+                # width: dp(250)
+                on_release: app.insta()
+            Label:
+                text: ''
+                
+            

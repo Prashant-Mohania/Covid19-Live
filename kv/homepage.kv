@@ -1,0 +1,114 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+
+<HomePage>:
+    MDBackdrop:
+        id: bd
+        title: 'CoronaVirus Live'
+        right_action_items: [['refresh', lambda x: app.all("hello")],['arrow-collapse-left', lambda x: app.navBar('open')]]
+        radius: 15
+        header: False
+        background_color: get_color_from_hex('#10B5A2')
+        MDBackdropBackLayer:
+            id: back_layar
+            MDGridLayout:
+                id: state_list
+                cols: 1
+                spacing: dp(10)
+                font_size: 40
+                ScrollView:
+                    MDList:
+                        id: sv
+                    # OneLineListItem:
+                    #     text: "Prashant"
+        MDBackdropFrontLayer:
+            # MDBackdropToolbar:
+            #     title: 'Prashant'
+            background_color: get_color_from_hex('#20B3F2')
+            
+            FloatLayout:
+                # pos_hint: {'top': .98, 'left': 1}
+                # canvas:
+                #     Color:
+                #         rgba: get_color_from_hex('#20B3F2')
+                #     Rectangle:
+                #         size: self.size
+                #         pos: self.pos
+                MDLabel:
+                    id: stateName
+                    pos_hint: {'top': 1, 'left': 1}
+                    size_hint: 1, .2
+                    text: 'ALL INDIA'
+                    halign: 'center'
+                    font_size: 40
+                
+                GridLayout:
+                    cols: 1
+                    pos_hint: {'top': .8, 'left': 1}
+                    size_hint: 1, .1
+                    padding: dp(10), dp(10)
+                    spacing: dp(100)
+                    font_size: 20
+                    MDGridLayout:
+                        cols: 2
+                        MDLabel:
+                            id: total
+                            text: 'Total'
+                            halign: 'center'
+                            font_size: 30
+
+                        MDLabel:
+                            id: total
+                            text: '147'
+                            halign: 'center'
+                            font_size: 30
+                    MDGridLayout:
+                        cols: 2
+                        MDLabel:
+                            text: 'Active'
+                            halign: 'center'
+                            font_size: 30
+
+                        MDLabel:
+                            id: active
+                            text: '200'
+                            halign: 'center'
+                            font_size: 30
+
+                    MDGridLayout:
+                        cols: 2
+                        MDLabel:
+                            text: 'Recovered'
+                            halign: 'center'
+                            font_size: 30
+
+                        MDLabel:
+                            id: recover
+                            text: '200'
+                            halign: 'center'
+                            font_size: 30
+
+                    MDGridLayout:
+                        cols: 2
+                        MDLabel:
+                            text: 'Death'
+                            halign: 'center'
+                            font_size: 30
+
+                        MDLabel:
+                            id: death
+                            text: '200'
+                            halign: 'center'
+                            font_size: 30
+                    MDGridLayout:
+                        cols: 2
+                        MDLabel:
+                            text: 'Source'
+                            halign: 'center'
+                            # font_size: 30
+
+                        MDLabel:
+                            text: 'www.mohfw.gov.in'
+                            halign: 'center'
+                            # font_size: 30
